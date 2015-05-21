@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+* {margin: 0;padding: 0;}
+img{
+	cursor: pointer;
+	width: 166px;
+	border: 1px solid #ddd;
+	border-radius: 100px;
+	box-shadow: 2px 2px 5px #bbb;
+	display: block;
+	position: relative;
+	background: blue;
+	padding: 10px;
+}
+#target-swipeUp {transform:matrix(1, 0, 0, 1, 0, 600);-webkit-transform:matrix(1, 0, 0, 1, 0, 600);}
+#target-swipeLeft {transform:matrix(1, 0, 0, 1, 100, 0);-webkit-transform:matrix(1, 0, 0, 1, 100, 0);}
+#target-swipeDown {transform:matrix(1, 0, 0, 1, 400, 0);-webkit-transform:matrix(1, 0, 0, 1, 400, 0);}
+#target-swipeRight {transform:matrix(1, 0, 0, 1, 0, 0);-webkit-transform:matrix(1, 0, 0, 1, 0, 0);}
+</style>
+<script type="text/javascript" src="../dist/js/base.js"></script>
+<script type="text/javascript">
+Base.ready(function() {
+	var targetToTap = document.getElementById('target-tap'),
+		targetLongTap = document.getElementById('target-longTap'),
+		targetSwipeRight = document.getElementById('target-swipeRight'),
+		targetSwipeUp = document.getElementById('target-swipeUp'),
+		targetSwipeDown = document.getElementById('target-swipeDown'),
+		targetSwipeLeft = document.getElementById('target-swipeLeft');
+	Base.touch(targetToTap,"tap",function(event) {
+		//console.log("tap");
+		Base.css(targetSwipeLeft,"background:yellow;");
+	});
+//	Base.touch(targetLongTap,"longTap",function(event) {
+//		console.log("longTap");
+//	});
+//	Base.touch(targetSwipeUp,"swipeUp",function(event) {
+//		console.log("swipeUp");
+//	});
+//	Base.touch(targetSwipeDown,"swipeDown",function(event) {
+//		console.log("swipeDown");
+//	});
+//  alert(Base.hasTouch);
+    //alert(transformArr);
+	Base.touch(targetSwipeLeft,"swipeLeft",{'displacement':100,speed:1000},function(event) {
+		 
+	});
+	Base.touch(targetSwipeRight,"swipeRight",{'displacement':1000},function(event) {
+		console.log("swipeRight");
+	});
+});
+
+</script>
+</head>
+<body>
+	<!--<img id="target-tap" src="../dist/img/cloud.png" title="tap">-->
+	<!--<img id="target-longTap" src="../dist/img/cloud.png" title="longTap">-->
+	<img id="target-swipeLeft" src="../dist/img/cloud.png" title="swipeLeft">
+	<img id="target-swipeDown" src="../dist/img/cloud.png" title="swipeDown">
+	<img id="target-swipeUp" src="../dist/img/cloud.png" title="swipeUp">
+	<img id="target-swipeRight" src="../dist/img/cloud.png" title="swipeRight">
+</body>
+</html>

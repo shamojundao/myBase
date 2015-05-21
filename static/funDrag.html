@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <title>Document</title>
 <link type="text/css" href="../dist/css/base.css" rel="stylesheet"/>
 <link type="text/css" href="../dist/css/demo.css" rel="stylesheet"/>
@@ -14,11 +15,11 @@
 <script type="text/javascript">
 var target = document.getElementById("target"),
 	con = document.getElementById('con');  
-Base.funDrag(target,function() {
-	console.log("完成！");
-});
+// Base.funDrag(target,function() {
+// 	console.log("完成！");
+// });
 //限制范围
-Base.funDrag(target,con,function() {
+Base.funDrag(target,document,function() {
     console.log("完成！");
 });
 </script>
